@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ConfirmationPage extends StatelessWidget {
+  const ConfirmationPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confirmação do Pedido'),
+        title: const Text('Confirmação do Pedido'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -20,19 +22,19 @@ class ConfirmationPage extends StatelessWidget {
               height: 150,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             // Mensagem de confirmação
-            Text(
+            const Text(
               'Pedido Confirmado!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             // Botão para voltar
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context); // Voltar à página anterior
               },
-              child: Text('Voltar'),
+              child: const Text('Voltar'),
             ),
           ],
         ),

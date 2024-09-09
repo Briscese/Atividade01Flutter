@@ -4,14 +4,14 @@ import 'confirmation_page.dart'; // Importa a página de confirmação
 class ProductDetailsPage extends StatefulWidget {
   final String productName;
 
-  ProductDetailsPage({required this.productName});
+  const ProductDetailsPage({super.key, required this.productName});
 
   @override
   _ProductDetailsPageState createState() => _ProductDetailsPageState();
 }
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
-  TextEditingController _quantityController = TextEditingController(text: '0');
+  final TextEditingController _quantityController = TextEditingController(text: '0');
 
   @override
   void dispose() {
@@ -23,7 +23,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalhes do Produto'),
+        title: const Text('Detalhes do Produto'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,19 +33,19 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           children: <Widget>[
             Text(
               widget.productName,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
-            Text('Quantidade:'),
-            SizedBox(height: 10),
+            const SizedBox(height: 20),
+            const Text('Quantidade:'),
+            const SizedBox(height: 10),
             TextField(
               controller: _quantityController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -53,7 +53,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   onPressed: () {
                     Navigator.pop(context); // Volta para a página anterior
                   },
-                  child: Text('Voltar'),
+                  child: const Text('Voltar'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -63,12 +63,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ConfirmationPage(),
+                          builder: (context) => const ConfirmationPage(),
                         ),
                       );
                     }
                   },
-                  child: Text('Enviar'),
+                  child: const Text('Enviar'),
                 ),
               ],
             ),

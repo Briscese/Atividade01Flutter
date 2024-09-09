@@ -10,11 +10,13 @@ class ProductsPage extends StatelessWidget {
     'Produto 5',
   ];
 
+  ProductsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Produtos'),
+        title: const Text('Lista de Produtos'),
       ),
       body: ListView.builder(
         itemCount: products.length,
